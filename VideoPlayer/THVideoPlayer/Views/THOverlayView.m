@@ -278,6 +278,9 @@
     [self.delegate jumpedToTime:currentTime];
 }
 
+/**
+ to make a crash
+ */
 //- (void)playbackComplete {
 //    self.scrubberSlider.value = 0.0f;
 //    self.togglePlaybackButton.selected = NO;
