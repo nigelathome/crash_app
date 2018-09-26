@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-
 #import "THAppDelegate.h"
 
 int main(int argc, char * argv[])

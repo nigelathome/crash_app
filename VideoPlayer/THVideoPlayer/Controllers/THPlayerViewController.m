@@ -1,8 +1,7 @@
 #import "THPlayerViewController.h"
-#import "THPlayerController.h"
 
 @interface THPlayerViewController ()
-@property (strong, nonatomic) THPlayerController *controller;
+
 @end
 
 @implementation THPlayerViewController

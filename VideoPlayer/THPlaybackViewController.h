@@ -6,4 +6,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *remoteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *localLabel;
 
+- (void)makeCrash;
+- (void)countDownAction;
+
 @end

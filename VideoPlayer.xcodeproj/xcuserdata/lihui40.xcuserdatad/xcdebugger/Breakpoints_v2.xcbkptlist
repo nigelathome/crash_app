@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPlayer/THPlaybackViewController.m"
-            timestampString = "559636713.508419"
+            timestampString = "559645799.8087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPlayer/THPlaybackViewController.m"
-            timestampString = "559636713.509042"
+            timestampString = "559645799.809039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-shouldPerformSegueWithIdentifier:sender:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

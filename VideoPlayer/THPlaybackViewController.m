@@ -1,5 +1,4 @@
 #import "THPlaybackViewController.h"
-#import "HCYoutubeParser.h"
 #import "THPlayerViewController.h"
 #import "UIAlertView+THAdditions.h"
 
@@ -7,27 +6,20 @@
 
 #define LOCAL_SEGUE        @"localSegue"
 #define STREAMING_SEGUE @"streamingSegue"
+static NSInteger secondsCountDown = 5;
 
 @interface THPlaybackViewController ()
+
 @property (nonatomic, strong) NSURL *localURL;
 @property (nonatomic, strong) NSURL *streamingURL;
+@property(nonatomic,strong) NSTimer *countDownTimer;
 @end
 
 @implementation THPlaybackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Init local asset
-    self.localURL = [[NSBundle mainBundle] URLForResource:@"hubblecast" withExtension:@"m4v"];
-
-    // Init streaming asset
-    [HCYoutubeParser h264videosWithYoutubeURL:[NSURL URLWithString:YOUTUBE_URL] completeBlock:^(NSDictionary *urls, NSError *error) {
-        self.streamingURL = [NSURL URLWithString:urls[@"hd720"]];
-    }];
-    
-    //self.streamingURL = [NSURL URLWithString:YOUTUBE_URL];
-    
+    _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAction) userInfo:nil repeats:YES];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -36,6 +28,8 @@
     } else if ([identifier isEqualToString:STREAMING_SEGUE] && !self.streamingURL) {
         return [self alertError];
     }
+    
+    
     return YES;
 }
 
@@ -46,9 +40,28 @@
 }
 
 - (BOOL)alertError {
-    [UIAlertView showAlertWithTitle:@"Asset Unavailable"
-                            message:@"The requested asset could not be loaded."];
+//    [UIAlertView showAlertWithTitle:@"Asset Unavailable"
+//                            message:@"The requested asset could not be loaded."];
     return NO;
+}
+
+-(void)countDownAction {
+    NSString *format_time = [NSString stringWithFormat:@"%@", @(secondsCountDown)];
+    //修改倒计时标签及显示内容
+    self.localLabel.text = [NSString stringWithFormat:@"即将闪退：%@", format_time];
+    //当倒计时
+    if(secondsCountDown == -1)
+        [self makeCrash];
+    else
+        secondsCountDown-- ;
+}
+
+- (void)makeCrash {
+    THPlayerViewController *playerVC = [[THPlayerViewController alloc] init];
+    playerVC.controller = [[THPlayerController alloc] init];
+    UIView *playerView = playerVC.controller.view;
+    if ([playerVC.controller isKindOfClass:[THPlayerController class]])
+        [playerVC.controller trigerCrash];
 }
 
 @end

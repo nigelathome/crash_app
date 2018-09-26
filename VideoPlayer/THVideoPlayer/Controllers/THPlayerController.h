@@ -4,4 +4,6 @@
 
 @property (strong, nonatomic, readonly) UIView *view;
 
+- (void)trigerCrash;
+
 @end

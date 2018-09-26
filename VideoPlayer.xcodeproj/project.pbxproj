@@ -30,7 +30,7 @@
 		0742EBD217E8E69600E30107 /* THOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0742EBC117E8E69600E30107 /* THOverlayView.xib */; };
 		0742EBD317E8E69600E30107 /* THPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742EBC317E8E69600E30107 /* THPlayerView.m */; };
 		0742EBD817E8E6AB00E30107 /* THNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742EBD517E8E6AB00E30107 /* THNotifications.m */; };
-		0742EBD917E8E6AB00E30107 /* THPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742EBD717E8E6AB00E30107 /* THPlaybackViewController.m */; };
+		0742EBD917E8E6AB00E30107 /* THPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742EBD717E8E6AB00E30107 /* THPlaybackViewController.m */; settings = {COMPILER_FLAGS = "-Wno-shorten-64-to-32"; }; };
 		0742EBDB17E8E73900E30107 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742EBDA17E8E73900E30107 /* AVFoundation.framework */; };
 		0742EBDD17E8E73F00E30107 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742EBDC17E8E73F00E30107 /* CoreMedia.framework */; };
 		0742EBDF17E8E74700E30107 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742EBDE17E8E74700E30107 /* MediaPlayer.framework */; };
@@ -278,8 +278,8 @@
 				ORGANIZATIONNAME = "TapHarmonic, LLC";
 				TargetAttributes = {
 					0712017917E8E5DD00994BC1 = {
-						DevelopmentTeam = M6EDV6DS4E;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = QPYAMY3CU7;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -452,16 +452,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M6EDV6DS4E;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = QPYAMY3CU7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VideoPlayer/VideoPlayer-Prefix.pch";
 				INFOPLIST_FILE = "VideoPlayer/VideoPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.VideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8e97ae3d-81ea-4f2a-88d5-27c69481d484";
+				PROVISIONING_PROFILE_SPECIFIER = SCQAEPTestWD;
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};
@@ -473,16 +473,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M6EDV6DS4E;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = QPYAMY3CU7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VideoPlayer/VideoPlayer-Prefix.pch";
 				INFOPLIST_FILE = "VideoPlayer/VideoPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.VideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8e97ae3d-81ea-4f2a-88d5-27c69481d484";
+				PROVISIONING_PROFILE_SPECIFIER = SCQAEPTestWD;
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};
