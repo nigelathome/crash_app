@@ -6,7 +6,7 @@
 
 #define LOCAL_SEGUE        @"localSegue"
 #define STREAMING_SEGUE @"streamingSegue"
-static NSInteger secondsCountDown = 5;
+static NSInteger secondsCountDown = 10;
 
 @interface THPlaybackViewController ()
 
@@ -19,7 +19,7 @@ static NSInteger secondsCountDown = 5;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAction) userInfo:nil repeats:YES];
+    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAction) userInfo:nil repeats:YES];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -50,16 +50,21 @@ static NSInteger secondsCountDown = 5;
     //修改倒计时标签及显示内容
     self.localLabel.text = [NSString stringWithFormat:@"即将闪退：%@", format_time];
     //当倒计时
-    if(secondsCountDown == -1)
-        [self makeCrash];
-    else
+    if(secondsCountDown == -1) {
+//        [self makeCrash];
+        THPlayerViewController *playerVC = [[THPlayerViewController alloc] init];
+        playerVC.assetURL = self.localURL;
+        playerVC.controller = [[THPlayerController alloc] initWithURL:self.localURL];
+        if ([playerVC.controller isKindOfClass:[THPlayerController class]])
+            [playerVC.controller trigerCrash];
+    }  else
         secondsCountDown-- ;
 }
 
 - (void)makeCrash {
     THPlayerViewController *playerVC = [[THPlayerViewController alloc] init];
-    playerVC.controller = [[THPlayerController alloc] init];
-    UIView *playerView = playerVC.controller.view;
+    playerVC.assetURL = self.localURL;
+    playerVC.controller = [[THPlayerController alloc] initWithURL:self.localURL];
     if ([playerVC.controller isKindOfClass:[THPlayerController class]])
         [playerVC.controller trigerCrash];
 }
